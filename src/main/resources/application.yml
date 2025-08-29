@@ -1,0 +1,18 @@
+app:
+  candidate:
+    name: "Apoorva Nema"          
+    regNo: "22BCE0655"         
+    email: "apoorvanema25@gmail.com" 
+  sql:
+    q1: "SELECT p.amount AS SALARY, CONCAT(e.first_name, ' ', e.last_name) AS NAME, TIMESTAMPDIFF(YEAR, e.dob, CURDATE()) AS AGE, d.department_name AS DEPARTMENT_NAME FROM payments p JOIN employee e ON p.emp_id = e.emp_id JOIN department d ON e.department = d.department_id WHERE DAY(p.payment_time) <> 1 ORDER BY p.amount DESC LIMIT 1;"
+    q2: ""
+
+api:
+  baseUrl: "https://bfhldevapigw.healthrx.co.in"
+  generatePath: "/hiring/generateWebhook/JAVA"
+  submitFallbackPath: "/hiring/testWebhook/JAVA"
+
+logging:
+  level:
+    root: INFO
+    com.example.hiring: DEBUG
